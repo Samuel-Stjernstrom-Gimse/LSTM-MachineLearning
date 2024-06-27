@@ -136,4 +136,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 This project uses the TensorFlow and Keras libraries for building and training the LSTM model, and scikit-learn for data preprocessing.
 ```
 
-This README file provides a comprehensive overview of your project, including the purpose, structure, requirements, data preparation, and steps to run the model. Adjust any parts as necessary to better fit your project specifics.
+
