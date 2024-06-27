@@ -8,13 +8,13 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 
 params = {
-    'seq_length': 10,         # Sequence length for LSTM
-    'lstm_units': 100,        # Number of LSTM units
-    'epochs': 200,           # Number of epochs to train
+    'seq_length': 100,         # Sequence length for LSTM
+    'lstm_units': 128,        # Number of LSTM units
+    'epochs': 1000,           # Number of epochs to train
     'batch_size': 32,         # Batch size for training
     'learning_rate': 0.001,   # Learning rate for the optimizer
-    'patience': 20,           # Patience for early stopping
-    'validation_split': 0.2   # Fraction of data to use for validation
+    'patience': 10,           # Patience for early stopping
+    'validation_split': 0.3   # Fraction of data to use for validation
 }
 
 with open('price_data.json', 'r') as f:
