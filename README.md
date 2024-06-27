@@ -1,4 +1,4 @@
-Sure, here is a README file in markdown format for your GitHub repository:
+
 
 ```markdown
 # Currency Price Prediction using LSTM
