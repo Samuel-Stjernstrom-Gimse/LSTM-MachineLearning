@@ -1,23 +1,70 @@
-1. Increase LSTM Units
-   Increase the number of LSTM units (lstm_units). LSTM models often benefit from more complex architectures when dealing with intricate patterns in time series data.
-   Example: Increase lstm_units to 50 or 64.
-2. Sequence Length
-   Adjust the sequence length (seq_length). This parameter defines how many previous time steps the model considers for predicting the next step.
-   Example: Try seq_length of 50 instead of 30, if memory and computational resources allow.
-3. Learning Rate
-   Optimize the learning rate (learning_rate). This parameter significantly affects the speed and quality of convergence during training.
-   Example: Experiment with values like 0.01 or 0.0001 to find the optimal learning rate.
-4. Batch Size
-   Adjust the batch size (batch_size). Larger batch sizes can provide a more accurate estimate of the gradient but may require more memory.
-   Example: Increase batch_size to 64 or 128 for potentially faster convergence.
-5. Early Stopping Patience
-   Fine-tune the early stopping patience parameter. This controls the number of epochs with no improvement after which training will be stopped.
-   Example: Adjust patience to 10 or 20 epochs based on the training dynamics.
-6. Model Architecture
-   Consider adding additional LSTM layers or Dense layers depending on the complexity of the problem.
-   Example: You might add another LSTM layer (model.add(LSTM(lstm_units, activation='relu', return_sequences=True))) followed by a Dense layer before the final output layer.
-7. Optimizer
-   Experiment with different optimizers (Adam, RMSprop, SGD) and their parameters (e.g., momentum for SGD, decay rates for Adam).
-   Example: Try different settings like adjusting the momentum or decay rates in Adam optimizer.
-8. Data Preparation
-   Ensure your data preparation steps (like normalization and sequence creation) are robust and appropriate for the data characteristics.
+This repository contains code for training LSTM models to predict future prices of various cryptocurrencies based on historical data. The project utilizes TensorFlow and Python for model training and prediction.
+
+Project Structure
+main.py: Main script to fetch historical data, train LSTM models, and predict future prices.
+cryptocurrency_data/: Directory to store JSON files containing historical price data for each cryptocurrency.
+saved_models/: Directory to store trained LSTM models.
+scaler.pkl: Pickle file containing the scaler used to normalize data during training.
+Requirements
+Ensure you have Python 3.x installed along with the following libraries:
+
+numpy
+tensorflow
+scikit-learn
+requests
+Install dependencies using:
+
+bash
+Kopier kode
+pip install -r requirements.txt
+Setup
+Clone the repository:
+
+bash
+Kopier kode
+git clone https://github.com/your_username/cryptocurrency-lstm-prediction.git
+cd cryptocurrency-lstm-prediction
+Fetch cryptocurrency data:
+
+Run the main script to fetch historical data for various cryptocurrencies:
+
+bash
+Kopier kode
+python main.py
+This will populate the cryptocurrency_data/ directory with JSON files for each cryptocurrency.
+
+Train LSTM models:
+
+Modify parameters in main.py such as seq_length, lstm_units, and epochs as needed. Then, run:
+
+bash
+Kopier kode
+python main.py
+LSTM models will be trained for the selected cryptocurrency and saved in saved_models/.
+
+Predict future prices:
+
+Use the trained models to predict future prices. Example usage:
+
+bash
+Kopier kode
+python main.py
+Adjust future_steps parameter to specify the number of days to predict into the future.
+
+Usage
+Select a cryptocurrency:
+
+When prompted, choose a cryptocurrency from the list provided.
+
+Prediction:
+
+After training, predictions for future prices will be displayed based on the selected cryptocurrency and model.
+
+Contributing
+Feel free to contribute to this project by forking and submitting a pull request. Ensure code changes align with the repository's objectives.
+
+Credits
+Author: Your Name
+Email: your.email@example.com
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
