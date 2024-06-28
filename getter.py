@@ -12,7 +12,7 @@ def fetch_crypto_ids():
 
 # Function to fetch historical data for a given cryptocurrency ID
 def fetch_historical_data(crypto_id):
-    url = f'https://api.coincap.io/v2/assets/{crypto_id}/history?interval=d1'
+    url = f'https://api.coincap.io/v2/assets/{crypto_id}/history?interval=h12'
     response = requests.get(url)
     data = response.json()
     return data['data']
